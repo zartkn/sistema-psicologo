@@ -1,0 +1,54 @@
+{
+    "clientes": [
+      {
+        "id": 1,
+        "nome": "João Silva",
+        "valor_consulta": 150,
+        "telefone": "(11) 91234-5678",
+        "notas_fiscais": [
+          { "id": 38294, "completada": true },
+          { "id": 48573, "completada": false }
+        ]
+      },
+      {
+        "id": 2,
+        "nome": "Maria Oliveira",
+        "valor_consulta": 200,
+        "telefone": "(21) 92345-6789",
+        "notas_fiscais": [
+          { "id": 19283, "completada": true }
+        ]
+      },
+      {
+        "id": 3,
+        "nome": "Pedro Santos",
+        "valor_consulta": 300,
+        "telefone": "(31) 93456-7890",
+        "notas_fiscais": [
+          { "id": 28493, "completada": false },
+          { "id": 37482, "completada": true },
+          { "id": 58372, "completada": false }
+        ]
+      },
+      {
+        "id": 4,
+        "nome": "Ana Costa",
+        "valor_consulta": 400,
+        "telefone": "(41) 94567-8901",
+        "notas_fiscais": [
+          { "id": 85739, "completada": true }
+        ]
+      },
+      {
+        "id": 5,
+        "nome": "Lucas Pereira",
+        "valor_consulta": 500,
+        "telefone": "(51) 95678-9012",
+        "notas_fiscais": [
+          { "id": 67482, "completada": false },
+          { "id": 12837, "completada": true }
+        ]
+      }
+    ]
+  }
+  
