@@ -1,0 +1,105 @@
+{
+    "psicologos": [
+      {
+        "userID": "001",
+        "cnae": "12345",
+        "endereco": {
+          "cep": "00000-000",
+          "logradouro": "Rua Exemplo",
+          "cidade": "Cidade Exemplo",
+          "numero": "123",
+          "estado": "SP",
+          "pais": "Brasil",
+          "bairro": "Bairro Exemplo"
+        },
+        "email": "exemplo1@dominio.com",
+        "passwd": "senha123",
+        "created": "2024-01-01",
+        "name": "Nome Psicólogo 1",
+        "razaoSocial": "Razão Social Psicólogo 1",
+        "cnpj": "00.000.000/0001-00",
+        "inscMunicipal": "123456"
+      },
+      {
+        "userID": "002",
+        "cnae": "54321",
+        "endereco": {
+          "cep": "11111-111",
+          "logradouro": "Avenida Psicologia",
+          "cidade": "São Paulo",
+          "numero": "456",
+          "estado": "SP",
+          "pais": "Brasil",
+          "bairro": "Bairro Saúde"
+        },
+        "email": "psicologa2@dominio.com",
+        "passwd": "senha456",
+        "created": "2023-12-01",
+        "name": "Nome Psicólogo 2",
+        "razaoSocial": "Razão Social Psicólogo 2",
+        "cnpj": "11.111.111/0001-11",
+        "inscMunicipal": "654321"
+      },
+      {
+        "userID": "003",
+        "cnae": "67890",
+        "endereco": {
+          "cep": "22222-222",
+          "logradouro": "Rua da Clínica",
+          "cidade": "Rio de Janeiro",
+          "numero": "789",
+          "estado": "RJ",
+          "pais": "Brasil",
+          "bairro": "Bairro Copacabana"
+        },
+        "email": "psicologo3@dominio.com",
+        "passwd": "senha789",
+        "created": "2022-10-05",
+        "name": "Nome Psicólogo 3",
+        "razaoSocial": "Razão Social Psicólogo 3",
+        "cnpj": "22.222.222/0001-22",
+        "inscMunicipal": "789123"
+      },
+      {
+        "userID": "004",
+        "cnae": "13579",
+        "endereco": {
+          "cep": "33333-333",
+          "logradouro": "Rua da Saúde Mental",
+          "cidade": "Belo Horizonte",
+          "numero": "101",
+          "estado": "MG",
+          "pais": "Brasil",
+          "bairro": "Bairro Funcionários"
+        },
+        "email": "psicologa4@dominio.com",
+        "passwd": "senha101",
+        "created": "2024-01-15",
+        "name": "Nome Psicólogo 4",
+        "razaoSocial": "Razão Social Psicólogo 4",
+        "cnpj": "33.333.333/0001-33",
+        "inscMunicipal": "101202"
+      },
+      {
+        "userID": "005",
+        "cnae": "24680",
+        "endereco": {
+          "cep": "44444-444",
+          "logradouro": "Rua dos Psicólogos",
+          "cidade": "Curitiba",
+          "numero": "202",
+          "estado": "PR",
+          "pais": "Brasil",
+          "bairro": "Bairro Centro"
+        },
+        "email": "psicologo5@dominio.com",
+        "passwd": "senha202",
+        "created": "2021-07-22",
+        "name": "Nome Psicólogo 5",
+        "razaoSocial": "Razão Social Psicólogo 5",
+        "cnpj": "44.444.444/0001-44",
+        "inscMunicipal": "202303"
+      }
+    ]
+  }
+  
