@@ -46,7 +46,7 @@
         "telefone": "(51) 95678-9012",
         "notas_fiscais": [
           { "id": 67482, "completada": false },
-          { "id": 12837, "completada": true }
+          { "id": 12837, "completada": false  }
         ]
       }
     ]

@@ -7,6 +7,7 @@
   <title>Psicontábil</title>
   <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
   <link rel="stylesheet" href="../assets/css/styles.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 </head>
 
 <body>
@@ -63,7 +64,7 @@
             <li class="sidebar-item">
               <a
                 class="sidebar-link sidebar-link danger-hover-bg"
-                href="./ui-alerts.html"
+                href="./notas-solicitadas.html"
                 aria-expanded="false"
               >
                 <span class="aside-icon p-2 bg-light-danger rounded-3">
@@ -228,7 +229,7 @@
           <div class="col-lg-8 d-flex align-items-strech">
             <div class="card w-100">
               <div class="card-body">
-                <div class="d-flex align-items-center justify-content-between mb-10">
+                <div class="d-flex align-items-center justify-content-between ">
                   <div class="">
                     <h5 class="card-title fw-semibold">Próximas consultas</h5>
                   </div>
@@ -257,7 +258,9 @@
                     </ul>
                   </div>
                 </div>
-                <div id="profit"></div>
+                <div>
+                  <iframe src="calendar/fullcalendar.html" style="max-width: 800px; width: 100%; height: 600px; frameborder=0"></iframe>
+                 </div>
               </div>
             </div>
           </div>
@@ -277,30 +280,9 @@
                 <!-- Monthly Earnings -->
                 <div class="card">
                   <div class="card-body">
-                    <div class="row alig n-items-start">
-                      <div class="col-8">
-                        <h5 class="card-title mb-10 fw-semibold"> Product Sales</h5>
-                        <h4 class="fw-semibold mb-3">$6,820</h4>
-                        <div class="d-flex align-items-center pb-1">
-                          <span
-                            class="me-2 rounded-circle bg-light-danger round-20 d-flex align-items-center justify-content-center">
-                            <i class="ti ti-arrow-down-right text-danger"></i>
-                          </span>
-                          <p class="text-dark me-1 fs-3 mb-0">+9%</p>
-                          <p class="fs-3 mb-0">last year</p>
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="d-flex justify-content-end">
-                          <div
-                            class="text-white bg-danger rounded-circle p-7 d-flex align-items-center justify-content-center">
-                            <i class="ti ti-currency-dollar fs-6"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div id="earning"></div>
+                    <h5 class="card-title mb-10 fw-semibold">Notas completadas</h5>
+                    <div id="notas-completadas">                      
+                    </div>                    
                 </div>
               </div>
             </div>
@@ -652,6 +634,7 @@
   <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
   <script src="../assets/js/dashboard.js"></script>
   <script src="../assets/js/menuscript.js"></script>
+  
 </body>
 
 </html>
