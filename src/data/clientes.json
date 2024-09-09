@@ -25,9 +25,9 @@
         "valor_consulta": 300,
         "telefone": "(31) 93456-7890",
         "notas_fiscais": [
-          { "id": 28493, "completada": false },
+          { "id": 28493, "completada": true },
           { "id": 37482, "completada": true },
-          { "id": 58372, "completada": false }
+          { "id": 58372, "completada": true }
         ]
       },
       {
