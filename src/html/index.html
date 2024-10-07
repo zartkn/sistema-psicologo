@@ -48,6 +48,7 @@
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-5"></i>
               <span class="hide-menu">Meu consultório</span>
+              <span class="hide-menu">Menu</span>
             </li>
             <li class="sidebar-item">
               <a
@@ -76,7 +77,7 @@
             <li class="sidebar-item">
               <a
                 class="sidebar-link sidebar-link success-hover-bg"
-                href="./ui-card.html"
+                href="./meus-pacientes.html"
                 aria-expanded="false"
               >
                 <span class="aside-icon p-2 bg-light-success rounded-3">
@@ -231,7 +232,7 @@
               <div class="card-body">
                 <div class="d-flex align-items-center justify-content-between ">
                   <div class="">
-                    <h5 class="card-title fw-semibold">Próximas consultas</h5>
+                    <h5 class="card-title fw-semibold">Calendário</h5>
                   </div>
                   <div class="dropdown">
                     <button
@@ -269,12 +270,62 @@
               <div class="col-lg-12 col-sm-6">
                 <!-- Yearly Breakup -->
                 <div class="card overflow-hidden">
-                  <div class="card-body p-4 notas-solitadas-menu">
-                    <h5 class="card-title mb-10 fw-semibold">Notas solicitadas</h5>
-                    <div id="notas-solicitadas">                      
-                    </div>                  
+                  <div class="card-body p-4">
+                    <div class="mb-4">
+                      <h5 class="card-title fw-semibold">Próximas consultas</h5>
+                    </div>
+                    <ul class="timeline-widget mb-0 position-relative mb-n5">
+                      <li class="timeline-item d-flex position-relative overflow-hidden">
+                        <div class="timeline-time text-dark flex-shrink-0 text-end">09:30</div>
+                        <div class="timeline-badge-wrap d-flex flex-column align-items-center">
+                          <span class="timeline-badge border-2 border border-primary flex-shrink-0 my-2"></span>
+                          <span class="timeline-badge-border d-block flex-shrink-0"></span>
+                        </div>
+                        <div class="timeline-desc fs-3 text-dark mt-n1">Consulta com Mark Soares</div>
+                      </li>
+                      <li class="timeline-item d-flex position-relative overflow-hidden">
+                        <div class="timeline-time text-dark flex-shrink-0 text-end">10:00</div>
+                        <div class="timeline-badge-wrap d-flex flex-column align-items-center">
+                          <span class="timeline-badge border-2 border border-info flex-shrink-0 my-2"></span>
+                          <span class="timeline-badge-border d-block flex-shrink-0"></span>
+                        </div>
+                        <div class="timeline-desc fs-3 text-dark mt-n1 fw-semibold">Consulta exemplo<a href="javascript:void(0)" class="text-primary d-block fw-normal">#informacao-adicional</a></div>
+                      </li>
+                      <li class="timeline-item d-flex position-relative overflow-hidden">
+                        <div class="timeline-time text-dark flex-shrink-0 text-end">12:00</div>
+                        <div class="timeline-badge-wrap d-flex flex-column align-items-center">
+                          <span class="timeline-badge border-2 border border-success flex-shrink-0 my-2"></span>
+                          <span class="timeline-badge-border d-block flex-shrink-0"></span>
+                        </div>
+                        <div class="timeline-desc fs-3 text-dark mt-n1">Consulta exemplo</div>
+                      </li>
+                      <li class="timeline-item d-flex position-relative overflow-hidden">
+                        <div class="timeline-time text-dark flex-shrink-0 text-end">14:00</div>
+                        <div class="timeline-badge-wrap d-flex flex-column align-items-center">
+                          <span class="timeline-badge border-2 border border-warning flex-shrink-0 my-2"></span>
+                          <span class="timeline-badge-border d-block flex-shrink-0"></span>
+                        </div>
+                        <div class="timeline-desc fs-3 text-dark mt-n1 fw-semibold">Consulta exemplo <a href="javascript:void(0)" class="text-primary d-block fw-normal">#informacao-adicional</a></div>
+                      </li>
+                      <li class="timeline-item d-flex position-relative overflow-hidden">
+                        <div class="timeline-time text-dark flex-shrink-0 text-end">14:30</div>
+                        <div class="timeline-badge-wrap d-flex flex-column align-items-center">
+                          <span class="timeline-badge border-2 border border-danger flex-shrink-0 my-2"></span>
+                          <span class="timeline-badge-border d-block flex-shrink-0"></span>
+                        </div>
+                        <div class="timeline-desc fs-3 text-dark mt-n1 fw-semibold">Consulta exemplo </div>
+                      </li>
+                      <li class="timeline-item d-flex position-relative overflow-hidden">
+                        <div class="timeline-time text-dark flex-shrink-0 text-end">15:00</div>
+                        <div class="timeline-badge-wrap d-flex flex-column align-items-center">
+                          <span class="timeline-badge border-2 border border-success flex-shrink-0 my-2"></span>
+                        </div>
+                        <div class="timeline-desc fs-3 text-dark mt-n1">Consulta exemplo </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
+                
               </div>
               <div class="col-lg-12 col-sm-6">
                 <!-- Monthly Earnings -->
@@ -291,64 +342,12 @@
         <div class="row">
           <div class="col-lg-4 d-flex align-items-stretch">
             <div class="card w-100">
-              <div class="card-body p-4">
-                <div class="mb-4">
-                  <h5 class="card-title fw-semibold">Upcoming Schedules</h5>
+              <div class="card overflow-hidden box-notas">
+                <div class="card-body p-4 notas-solitadas-menu">
+                  <h5 class="card-title mb-10 fw-semibold">Notas solicitadas</h5>
+                  <div id="notas-solicitadas">                      
+                  </div>                  
                 </div>
-                <ul class="timeline-widget mb-0 position-relative mb-n5">
-                  <li class="timeline-item d-flex position-relative overflow-hidden">
-                    <div class="timeline-time text-dark flex-shrink-0 text-end">09:30</div>
-                    <div class="timeline-badge-wrap d-flex flex-column align-items-center">
-                      <span class="timeline-badge border-2 border border-primary flex-shrink-0 my-2"></span>
-                      <span class="timeline-badge-border d-block flex-shrink-0"></span>
-                    </div>
-                    <div class="timeline-desc fs-3 text-dark mt-n1">Payment received from John Doe of $385.90</div>
-                  </li>
-                  <li class="timeline-item d-flex position-relative overflow-hidden">
-                    <div class="timeline-time text-dark flex-shrink-0 text-end">10:00 am</div>
-                    <div class="timeline-badge-wrap d-flex flex-column align-items-center">
-                      <span class="timeline-badge border-2 border border-info flex-shrink-0 my-2"></span>
-                      <span class="timeline-badge-border d-block flex-shrink-0"></span>
-                    </div>
-                    <div class="timeline-desc fs-3 text-dark mt-n1 fw-semibold">New sale recorded <a
-                        href="javascript:void(0)" class="text-primary d-block fw-normal">#ML-3467</a>
-                    </div>
-                  </li>
-                  <li class="timeline-item d-flex position-relative overflow-hidden">
-                    <div class="timeline-time text-dark flex-shrink-0 text-end">12:00 am</div>
-                    <div class="timeline-badge-wrap d-flex flex-column align-items-center">
-                      <span class="timeline-badge border-2 border border-success flex-shrink-0 my-2"></span>
-                      <span class="timeline-badge-border d-block flex-shrink-0"></span>
-                    </div>
-                    <div class="timeline-desc fs-3 text-dark mt-n1">Payment was made of $64.95 to Michael</div>
-                  </li>
-                  <li class="timeline-item d-flex position-relative overflow-hidden">
-                    <div class="timeline-time text-dark flex-shrink-0 text-end">09:30 am</div>
-                    <div class="timeline-badge-wrap d-flex flex-column align-items-center">
-                      <span class="timeline-badge border-2 border border-warning flex-shrink-0 my-2"></span>
-                      <span class="timeline-badge-border d-block flex-shrink-0"></span>
-                    </div>
-                    <div class="timeline-desc fs-3 text-dark mt-n1 fw-semibold">New sale recorded <a
-                        href="javascript:void(0)" class="text-primary d-block fw-normal">#ML-3467</a>
-                    </div>
-                  </li>
-                  <li class="timeline-item d-flex position-relative overflow-hidden">
-                    <div class="timeline-time text-dark flex-shrink-0 text-end">09:30 am</div>
-                    <div class="timeline-badge-wrap d-flex flex-column align-items-center">
-                      <span class="timeline-badge border-2 border border-danger flex-shrink-0 my-2"></span>
-                      <span class="timeline-badge-border d-block flex-shrink-0"></span>
-                    </div>
-                    <div class="timeline-desc fs-3 text-dark mt-n1 fw-semibold">New arrival recorded 
-                    </div>
-                  </li>
-                  <li class="timeline-item d-flex position-relative overflow-hidden">
-                    <div class="timeline-time text-dark flex-shrink-0 text-end">12:00 am</div>
-                    <div class="timeline-badge-wrap d-flex flex-column align-items-center">
-                      <span class="timeline-badge border-2 border border-success flex-shrink-0 my-2"></span>
-                    </div>
-                    <div class="timeline-desc fs-3 text-dark mt-n1">Payment Done</div>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
@@ -358,7 +357,7 @@
                 <div
                   class="d-flex mb-4 justify-content-between align-items-center"
                 >
-                  <h5 class="mb-0 fw-bold">Top Paying Clients</h5>
+                  <h5 class="mb-0 fw-bold">Meus pacientes</h5>
 
                   <div class="dropdown">
                     <button
@@ -392,9 +391,9 @@
                   >
                     <thead>
                       <tr>
-                        <th scope="col">Profile</th>
-                        <th scope="col">Hour Rate</th>
-                        <th scope="col">Extra classes</th>
+                        <th scope="col">Perfil</th>
+                        <th scope="col">Preço por Hora</th>
+                        <th scope="col">Sessões extras</th>
                         <th scope="col">Status</th>
                       </tr>
                     </thead>
@@ -412,13 +411,13 @@
                             </div>
 
                             <div>
-                              <h6 class="mb-1 fw-bolder">Mark J. Freeman</h6>
-                              <p class="fs-3 mb-0">Prof. English</p>
+                              <h6 class="mb-1 fw-bolder">Mark Soares</h6>
+                              <p class="fs-3 mb-0">Info</p>
                             </div>
                           </div>
                         </td>
                         <td>
-                          <p class="fs-3 fw-normal mb-0">$150/hour</p>
+                          <p class="fs-3 fw-normal mb-0">R$ 150/hora</p>
                         </td>
                         <td>
                           <p class="fs-3 fw-normal mb-0 text-success">
@@ -447,12 +446,12 @@
 
                             <div>
                               <h6 class="mb-1 fw-bolder">Nina R. Oldman</h6>
-                              <p class="fs-3 mb-0">Prof. History</p>
+                              <p class="fs-3 mb-0">Info</p>
                             </div>
                           </div>
                         </td>
                         <td>
-                          <p class="fs-3 fw-normal mb-0">$150/hour</p>
+                          <p class="fs-3 fw-normal mb-0">R$ 150/hora</p>
                         </td>
                         <td>
                           <p class="fs-3 fw-normal mb-0 text-success">
@@ -481,12 +480,12 @@
 
                             <div>
                               <h6 class="mb-1 fw-bolder">Arya H. Shah</h6>
-                              <p class="fs-3 mb-0">Prof. Maths</p>
+                              <p class="fs-3 mb-0">Info</p>
                             </div>
                           </div>
                         </td>
                         <td>
-                          <p class="fs-3 fw-normal mb-0">$150/hour</p>
+                          <p class="fs-3 fw-normal mb-0">R$ 150/hora</p>
                         </td>
                         <td>
                           <p class="fs-3 fw-normal mb-0 text-success">
@@ -515,12 +514,12 @@
 
                             <div>
                               <h6 class="mb-1 fw-bolder">June R. Smith</h6>
-                              <p class="fs-3 mb-0">Prof. Arts</p>
+                              <p class="fs-3 mb-0">Info</p>
                             </div>
                           </div>
                         </td>
                         <td>
-                          <p class="fs-3 fw-normal mb-0">$150/hour</p>
+                          <p class="fs-3 fw-normal mb-0">R$ 150/hora</p>
                         </td>
                         <td>
                           <p class="fs-3 fw-normal mb-0 text-success">
@@ -536,88 +535,6 @@
                       </tr>
                     </tbody>
                   </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-6 col-xl-3">
-            <div class="card overflow-hidden rounded-2">
-              <div class="position-relative">
-                <a href="javascript:void(0)"><img src="../assets/images/products/s4.jpg" class="card-img-top rounded-0" alt="..."></a>
-                <a href="javascript:void(0)" class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i class="ti ti-basket fs-4"></i></a>                      </div>
-              <div class="card-body pt-3 p-4">
-                <h6 class="fw-semibold fs-4">Boat Headphone</h6>
-                <div class="d-flex align-items-center justify-content-between">
-                  <h6 class="fw-semibold fs-4 mb-0">$50 <span class="ms-2 fw-normal text-muted fs-3"><del>$65</del></span></h6>
-                  <ul class="list-unstyled d-flex align-items-center mb-0">
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star-filled text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star-filled text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star-filled text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                    <li><a class="" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-xl-3">
-            <div class="card overflow-hidden rounded-2">
-              <div class="position-relative">
-                <a href="javascript:void(0)"><img src="../assets/images/products/s5.jpg" class="card-img-top rounded-0" alt="..."></a>
-                <a href="javascript:void(0)" class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i class="ti ti-basket fs-4"></i></a>                      </div>
-              <div class="card-body pt-3 p-4">
-                <h6 class="fw-semibold fs-4">MacBook Air Pro</h6>
-                <div class="d-flex align-items-center justify-content-between">
-                  <h6 class="fw-semibold fs-4 mb-0">$650 <span class="ms-2 fw-normal text-muted fs-3"><del>$900</del></span></h6>
-                  <ul class="list-unstyled d-flex align-items-center mb-0">
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star-filled text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star-filled text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star-filled text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                    <li><a class="" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-xl-3">
-            <div class="card overflow-hidden rounded-2">
-              <div class="position-relative">
-                <a href="javascript:void(0)"><img src="../assets/images/products/s7.jpg" class="card-img-top rounded-0" alt="..."></a>
-                <a href="javascript:void(0)" class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i class="ti ti-basket fs-4"></i></a>                      </div>
-              <div class="card-body pt-3 p-4">
-                <h6 class="fw-semibold fs-4">Red Valvet Dress</h6>
-                <div class="d-flex align-items-center justify-content-between">
-                  <h6 class="fw-semibold fs-4 mb-0">$150 <span class="ms-2 fw-normal text-muted fs-3"><del>$200</del></span></h6>
-                  <ul class="list-unstyled d-flex align-items-center mb-0">
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star-filled text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star-filled text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star-filled text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                    <li><a class="" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-xl-3">
-            <div class="card overflow-hidden rounded-2">
-              <div class="position-relative">
-                <a href="javascript:void(0)"><img src="../assets/images/products/s11.jpg" class="card-img-top rounded-0" alt="..."></a>
-                <a href="javascript:void(0)" class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i class="ti ti-basket fs-4"></i></a>                      </div>
-              <div class="card-body pt-3 p-4">
-                <h6 class="fw-semibold fs-4">Cute Soft Teddybear</h6>
-                <div class="d-flex align-items-center justify-content-between">
-                  <h6 class="fw-semibold fs-4 mb-0">$285 <span class="ms-2 fw-normal text-muted fs-3"><del>$345</del></span></h6>
-                  <ul class="list-unstyled d-flex align-items-center mb-0">
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star-filled text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star-filled text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star-filled text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                    <li><a class="" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                  </ul>
                 </div>
               </div>
             </div>

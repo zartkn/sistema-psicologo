@@ -19,7 +19,7 @@
       <div class="scroll-sidebar" data-simplebar>
         <div class="d-flex mb-4 align-items-center justify-content-between">
             <a href="index.html" class="text-nowrap logo-img ms-0 ms-md-1">
-              <img src="../assets/images/logos/dark-logo.svg" width="180" alt="">
+              <img src="../assets/images/logos/dark-logo.jpeg" width="180" alt="">
             </a>
             <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
               <i class="ti ti-x fs-8"></i>
@@ -41,12 +41,12 @@
                 <span class="aside-icon p-2 bg-light-primary rounded-3">
                   <i class="ti ti-layout-dashboard fs-7 text-primary"></i>
                 </span>
-                <span class="hide-menu ms-2 ps-1">Dashboard</span>
+                <span class="hide-menu ms-2 ps-1">Homepage</span>
               </a>
             </li>
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-5"></i>
-              <span class="hide-menu">UI Componenst</span>
+              <span class="hide-menu">Menu</span>
             </li>
             <li class="sidebar-item">
               <a
@@ -57,7 +57,7 @@
                 <span class="aside-icon p-2 bg-light-warning rounded-3">
                   <i class="ti ti-article fs-7 text-warning"></i>
                 </span>
-                <span class="hide-menu ms-2 ps-1">Buttons</span>
+                <span class="hide-menu ms-2 ps-1">Consultas</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -69,19 +69,19 @@
                 <span class="aside-icon p-2 bg-light-danger rounded-3">
                   <i class="ti ti-alert-circle fs-7 text-danger"></i>
                 </span>
-                <span class="hide-menu ms-2 ps-1">Alerts</span>
+                <span class="hide-menu ms-2 ps-1">Notas solicitadas</span>
               </a>
             </li>
             <li class="sidebar-item">
               <a
                 class="sidebar-link sidebar-link success-hover-bg"
-                href="./notas-solicitadas.html"
+                href="./meus-pacientes.html"
                 aria-expanded="false"
               >
                 <span class="aside-icon p-2 bg-light-success rounded-3">
                   <i class="ti ti-cards fs-7 text-success"></i>
                 </span>
-                <span class="hide-menu ms-2 ps-1">Card</span>
+                <span class="hide-menu ms-2 ps-1">Meus pacientes</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -275,36 +275,12 @@
       <!--  Header End -->
       <div class="container-fluid">
         <div class="container-fluid">
-          <div class="card">
+          <div class="card tela-notas">
             <div class="card-body">
               <h5 class="card-title fw-semibold mb-4">Notas Solicitadas</h5>
-              <div class="card mb-0">
-                <div class="card-body p-4">
-                  <div class="alert alert-primary" role="alert">
-                    A simple primary alert—check it out!
-                  </div>
-                  <div class="alert alert-secondary" role="alert">
-                    A simple secondary alert—check it out!
-                  </div>
-                  <div class="alert alert-success" role="alert">
-                    A simple success alert—check it out!
-                  </div>
-                  <div class="alert alert-danger" role="alert">
-                    A simple danger alert—check it out!
-                  </div>
-                  <div class="alert alert-warning" role="alert">
-                    A simple warning alert—check it out!
-                  </div>
-                  <div class="alert alert-info" role="alert">
-                    A simple info alert—check it out!
-                  </div>
-                  <div class="alert alert-light" role="alert">
-                    A simple light alert—check it out!
-                  </div>
-                  <div class="alert alert-dark" role="alert">
-                    A simple dark alert—check it out!
-                  </div>
-                </div>
+                <div class="card-body p-4 notas-solitadas-menu">
+                  <div id="notas-solicitadas">                      
+                  </div>                  
               </div>
             </div>
           </div>
@@ -317,6 +293,7 @@
   <script src="../assets/js/sidebarmenu.js"></script>
   <script src="../assets/js/app.min.js"></script>
   <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+  <script src="../assets/js/menuscript.js"></script>
 </body>
 
 </html>

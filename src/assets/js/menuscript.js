@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const container = document.getElementById('notas-solicitadas');
   
       if (!container) {
-        console.error('Elemento de container não encontrado!');
+        console.error('Container não encontrado!');
         return;
       }
   
