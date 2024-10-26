@@ -1,0 +1,25 @@
+{
+    "users": {
+      "usuario1": {
+        "events": [
+          {
+            "title": "Evento A",
+            "start": "2024-10-20T10:00:00",
+            "end": "2024-10-20T12:00:00",
+            "allDay": false
+          }
+        ]
+      },
+      "usuario2": {
+        "events": [
+          {
+            "title": "Evento B",
+            "start": "2024-10-21T09:00:00",
+            "end": "2024-10-21T10:00:00",
+            "allDay": false
+          }
+        ]
+      }
+    }
+  }
+  
