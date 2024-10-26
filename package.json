@@ -12,7 +12,11 @@
   "dependencies": {
     "apexcharts": "^3.37.0",
     "bootstrap": "^5.3.0",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
     "jquery": "^3.6.3",
-    "spikeadminlite": "file:"
+    "spikeadminlite": "file:",
+    "mysql": "^2.18.1",
+    "psicontabil": "file:"
   }
 }

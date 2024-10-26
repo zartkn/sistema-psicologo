@@ -1,28 +1,29 @@
-var inputs = {
-    nome: /^[\w\s]+$/,  // Regex válida para nome (letras, números e espaços)
-    email: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/  // Regex válida para email
-};
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("formRegister"); 
 
-// Evento de submissão do formulário
-$("form").on("submit", function(event) {
-    event.preventDefault();  // Previne o envio do formulário, para validação
+  if (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // NAO DEIXA ENVIAR SEM ESTAR VALIDADO
 
-    // Acessando os inputs
-    let email = document.getElementById("inputLogin1").value;
-    let senha = document.getElementById("inputSenha1").value;
-    
-    // Validação de cada campo de acordo com o tipo
-    $("form input").each(function() {
-        var tipo = this.name;  // Pega o "name" do input para saber qual regex usar
-        var regex = inputs[tipo];  // Pega a regex correspondente ao tipo
-        console.log(email)
-        // Valida o valor do input com a regex
-        if (this.value.match(regex)) {
-            console.log("Funfou: " + tipo);
-            alert('O campo ' + tipo + ' está válido!');
-        } else {
-            console.log("Não funfou: " + tipo);
-            alert('O campo ' + tipo + ' está inválido!');
-        }
+      const username = document.getElementById("exampleInputtext1")?.value;
+      const email = document.getElementById("exampleInputEmail1")?.value;
+      const password = document.getElementById("exampleInputPassword1")?.value;
+
+      // VALIDACOES
+      if (!username || !email || !password) {
+        console.error("Todos os campos são obrigatórios.");
+        return;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailRegex.test(email)) {
+        console.error("Formato de email inválido.");
+        return;
+      }
+
+   
+      form.submit(); // Envia o formulário para /register
     });
+  }
 });

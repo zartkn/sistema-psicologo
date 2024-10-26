@@ -31,30 +31,29 @@
                   <img src="../assets/images/logos/dark-logo.jpeg" width="180" alt="">
                 </a>
                 <p class="text-center"></p>
-                <form>
+                <form action="/login" method="POST">
                   <div class="mb-3">
                     <label for="inputLogin1" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputLogin1" aria-describedby="login" required>
+                    <input type="email" class="form-control" id="inputLogin1" aria-describedby="login" name="email" required>
                   </div>
                   <div class="mb-4">
                     <label for="inputSenha1" class="form-label">Senha</label>
-                    <input type="password" class="form-control" id="inputSenha1" required>
+                    <input type="password" class="form-control" id="inputSenha1" name="password" required>
                   </div>
                   <div class="d-flex align-items-center justify-content-between mb-4">
                     <div class="form-check">
                       <input class="form-check-input primary" type="checkbox" value="" id="flexCheckChecked" checked>
-                      <label class="form-check-label text-dark" for="flexCheckChecked">
-                        Lembrar deste dispositivo
-                      </label>
+                      <label class="form-check-label text-dark" for="flexCheckChecked">Lembrar deste dispositivo</label>
                     </div>
-                    <a class="text-primary fw-bold" href="./index.html">Esqueceu sua senha ?</a>
+                    <a class="text-primary fw-bold" href="./index.html">Esqueceu sua senha?</a>
                   </div>
-                  <button type="submit" class="btn btn-primary w-100 fs-4 mb-4 rounded-2" href="index.html">Entrar</button>
+                  
+                  <button type="submit" class="btn btn-primary w-100 fs-4 mb-4 rounded-2">Entrar</button>
                   <div class="d-flex align-items-center justify-content-center">
                     <p class="fs-4 mb-0 fw-bold">Novo por aqui?</p>
-                    <a class="text-primary fw-bold ms-2" href="./authentication-register.html">Criar uma conta</a>
+                    <a class="text-primary fw-bold ms-2" href="/register">Criar uma conta</a>
                   </div>
-                </form>
+                </form>                
               </div>
             </div>
           </div>
