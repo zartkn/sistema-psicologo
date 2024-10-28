@@ -250,7 +250,24 @@
             <div class="card-body">
               <h5 class="card-title fw-semibold mb-4">Notas finalizadas</h5>
               <div class="card mb-0 menu-notas-solicitadas">
-                
+                <div class="card-body p-4">
+                  <div class="card-body p-4">
+                    <div id="notas-solicitadas">     
+                        <% if (notas.length > 0) { %>
+                            <% notas.forEach(nota => { %>
+                                <div class="nota-solicitada-menu nota-cor-verde">
+                                    <a href="/nota/<%= nota.id_Nota %>">
+                                        <p><strong>Nome:</strong> <%= nota.nome %></p>
+                                        <p><strong>Valor:</strong> R$ <%= nota.valor %></p>
+                                    </a>
+                                </div>
+                            <% }); %>
+                        <% } else { %>
+                            <p>Não há notas finalizadas.</p>
+                        <% } %>                 
+                    </div>                  
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -263,7 +280,6 @@
   <script src="../assets/js/sidebarmenu.js"></script>
   <script src="../assets/js/app.min.js"></script>
   <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
-  <script src="../assets/js/menuscript.js"></script>
 </body>
 
 </html>

@@ -55,6 +55,38 @@ app.use(express.static(__dirname + '/src'));
 app.use(express.urlencoded({ extended: true }));
 
 
+app.post('/nota/:id/finalizar', (req, res) => {
+  const notaId = req.params.id;
+
+  con.query('UPDATE Notas SET finalizado = TRUE WHERE id_Nota = ?', [notaId], (err, results) => {
+    if (err) {
+      console.error('Erro ao buscar nota:', err);
+      return res.status(500).send('Erro ao buscar nota');
+    }
+  });
+  res.redirect("/notas-solicitadas")
+});
+
+
+app.get('/nota/:id', (req, res) => {
+  const notaId = req.params.id;
+
+  con.query('SELECT * FROM Notas WHERE id_Nota = ?', [notaId], (err, results) => {
+    if (err) {
+      console.error('Erro ao buscar nota:', err);
+      return res.status(500).send('Erro ao buscar nota');
+    } 
+
+    if (results.length === 0) {
+      return res.status(404).send('Nota não encontrada');
+    }
+
+    // mostra a pagina, com os resultados da nota especificada
+    res.render('nota-detalhes', { nota: results[0] });
+  });
+});
+
+
 //PAGINA PARA CADA NOTA
 app.get('/nota/:id', (req, res) => {
   const notaId = req.params.id;
@@ -112,7 +144,7 @@ app.post('/formulario', (req, res) => {
   con.query(sql, values, () => {
 
     console.log(`Dados inseridos`); 
-    res.send('Formulário enviado (tela usuario para finalizar)');
+    res.sendFile(__dirname + '/src/html/formulario-completo.html');
   });
 });
 
