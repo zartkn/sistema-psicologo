@@ -215,7 +215,7 @@
             </li>
           </ul>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
-            <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
+            <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">             
               <li class="nav-item dropdown">
                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                   aria-expanded="false">
@@ -235,7 +235,7 @@
                       <i class="ti ti-list-check fs-6"></i>
                       <p class="mb-0 fs-3">My Task</p>
                     </a>
-                    <a href="/login" class="btn btn-outline-primary mx-3 mt-2 d-block shadow-none">Logout</a>
+                    <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block shadow-none">Logout</a>
                   </div>
                 </div>
               </li>
@@ -248,14 +248,26 @@
         <div class="container-fluid">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title fw-semibold mb-4">Notas Solicitadas</h5>
-              <div class="card mb-0 menu-notas-solicitadas">
+              <h5 class="card-title fw-semibold mb-4">Solicitar nota</h5>
+              <div class="card mb-0">
                 <div class="card-body p-4">
-                  <div class="card-body p-4">
-                    <h5 class="card-title mb-10 fw-semibold">Notas solicitadas</h5>
-                    <div id="notas-solicitadas">                      
-                    </div>                  
-                  </div>
+                  <form action="">
+                    <div class="mb-4">
+                      <label for="tipoConsulta" class="form-label">Tipo de consulta</label>
+                      <select class="form-control" id="tipoConsulta" name="tipoConsulta" required>
+                        <option value="consulta1">Consulta Individual</option>
+                        <option value="consulta2">Consulta de Casal</option>
+                        <option value="consulta3">Consulta Familiar</option>                        
+                      </select>
+                    </div>      
+                    <div class="mb-4">
+                      <label for="inputSenha1" class="form-label">Valor</label>
+                      <input type="number" class="form-control" id="inputSenha1"required>
+                    </div>
+                    <div >
+                      <button type="button" onclick="gerarLink()" class="btn btn-primary w-100 fs-4 mb-4 rounded-2">Gerar link</button>
+                    </div>                   
+                  </form>                
                 </div>
               </div>
             </div>
@@ -264,12 +276,12 @@
       </div>
     </div>
   </div>
+  <script src="../assets/js/solicitar-nota.js"></script>
   <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
   <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/js/sidebarmenu.js"></script>
   <script src="../assets/js/app.min.js"></script>
   <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
-  <script src="../assets/js/menuscript.js"></script>
 </body>
 
 </html>

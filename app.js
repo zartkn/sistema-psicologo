@@ -13,6 +13,8 @@ var con = mysql.createConnection({
   multipleStatements: true
 });
 
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views'); 
 
 // CONFIGURACOES DA SESSAO DO USUARIO
 app.use(session({
@@ -53,35 +55,107 @@ app.use(express.static(__dirname + '/src'));
 app.use(express.urlencoded({ extended: true }));
 
 
-//TELA DE LOGIN GET
-app.get('/login', (req, res) => {
-  res.sendFile(__dirname + '/src/html/authentication-login.html');
-  console.log("aa")
-});
+//PAGINA PARA CADA NOTA
+app.get('/nota/:id', (req, res) => {
+  const notaId = req.params.id;
 
-
-// TELA DE LOGIN POST
-app.post('/login', (req, res) => {
-  const email = req.body.email;
-  const password = req.body.password;
-
-  // VERIFICACAO EMAIL E SENHA
-  const sql = 'SELECT * FROM Usuarios WHERE email = ? AND senha = ?';
-  con.query(sql, [email, password], (err, results) => {
+  con.query('SELECT * FROM Notas WHERE id_Nota = ?', [notaId], (err, results) => {
     if (err) {
-      console.log("Erro na verificacao das credenciais.")
-      res.redirect("login")
+      console.error('Erro ao buscar nota:', err);
+      return res.status(500).send('Erro ao buscar nota');
+    } 
+
+    if (results.length === 0) {
+      return res.status(404).send('Nota não encontrada');
     }
 
-    if (results.length > 0) {
-      req.session.user = results[0]; 
-      return res.redirect("/menu"); 
-    } else {
-      console.log("Credenciais inválidas, tente novamente.")
-      res.redirect("login")
-    }
+    // mostra a pagina, com os resultados da nota especificada
+    res.render('nota-detalhes', { nota: results[0] });
   });
 });
+
+
+//TELA DE NOTAS FINALIZADAS
+app.get('/notas-finalizadas', (req, res) => {
+  if (!req.session.user || !req.session.user.id) {
+    return res.redirect('/login'); 
+  }
+  //ID do psicologo
+  const psicologoId = req.session.user.id; 
+
+  // consulta as notas no banco de dados com base no psicologo
+  con.query('SELECT * FROM Notas WHERE id_Psicologo = 1 AND finalizado = 1; ', [psicologoId], (err, notas) => {
+    if (err) {
+      console.error('Erro ao buscar notas:', err);
+      return res.status(500).send('Erro ao buscar notas');
+    }
+    res.render('notas-finalizadas', { notas });
+  });
+});
+
+
+//FORMULARIO PARA O CLIENTE
+app.get('/formulario', (req, res) => {
+  res.sendFile(__dirname + '/src/html/formulario.html');
+});
+
+app.post('/formulario', (req, res) => {
+  // pega a info do formulario
+  const { idPsicologo, valor, nome, sobrenome, cpf, telefone } = req.body;
+
+  const nomeCompleto = `${nome} ${sobrenome}`
+
+  const sql = 'INSERT INTO Notas (id_Psicologo, valor, nome, cpf, telefone) VALUES (?, ?, ?, ?, ?)';
+  const values = [idPsicologo, valor, nomeCompleto, cpf, telefone];
+
+
+  con.query(sql, values, () => {
+
+    console.log(`Dados inseridos`); 
+    res.send('Formulário enviado (tela usuario para finalizar)');
+  });
+});
+
+
+//SOLICITAR NOTA
+app.get("/solicitar-nota", (req, res) => {
+
+  if (!req.session.user || !req.session.user.id) {
+    return res.redirect('/login'); 
+  }
+
+  // Renderiza o arquivo EJS e passa o ID do psicólogo
+  res.render('solicitar-nota.ejs', { psicologoId: req.session.user.id });
+});
+
+//TELA NOTAS SOLICITADAS
+app.get('/notas-solicitadas', (req, res) => {
+  if (!req.session.user || !req.session.user.id) {
+    return res.redirect('/login'); 
+  }
+
+  //ID do psicologo
+  const psicologoId = req.session.user.id; 
+
+  // consulta as notas no banco de dados com base no psicologo
+  con.query('SELECT * FROM Notas WHERE id_Psicologo = 1 AND finalizado = 0; ', [psicologoId], (err, notas) => {
+    if (err) {
+      console.error('Erro ao buscar notas:', err);
+      return res.status(500).send('Erro ao buscar notas');
+    }
+    res.render('notas-solicitadas', { notas });
+  });
+});
+
+
+//menu
+app.get('/menu', (req, res) => {
+  if (!req.session.user || !req.session.user.id) {
+    return res.redirect('/login'); 
+  }
+  res.sendFile(__dirname + '/src/html/index.html');
+});
+
 
 //TELA DE REGISTER
 app.get('/register', (req, res) => {
@@ -101,24 +175,60 @@ app.post('/register', (req, res) => {
   con.query(sql, values, (err, result) => {
     if (err) {
       console.error('Erro ao inserir dados no banco de dados:', err.message);
-      return res.status(500).send('Erro ao salvar os dados no banco de dados'); 
     }
 
-    console.log('Usuário registrado!');
+    console.log(`Usuário registrado ID: ${result.insertId}`);
     res.redirect("/login");  
   });
 });
 
 
-
-//menu
-app.get('/menu', (req, res) => {
-  res.sendFile(__dirname + '/src/html/index.html');
+//TELA DE LOGIN GET
+app.get('/login', (req, res) => {
+  res.sendFile(__dirname + '/src/html/authentication-login.html');
 });
 
 
+// TELA DE LOGIN POST
+app.post('/login', (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
 
-//lista de usuarios (REMOVER DEPOIS)
+  // VERIFICACAO EMAIL E SENHA
+  const sql = 'SELECT * FROM Usuarios WHERE email = ? AND senha = ?';
+  con.query(sql, [email, password], (err, results) => {
+    if (err) {
+      console.log("Erro na verificacao das credenciais.")
+      res.redirect("login")
+    }
+
+    if (results.length > 0) {
+      req.session.user = {
+        id: results[0].id,
+        username: results[0].username,
+        email: results[0].email
+      };
+      return res.redirect("/menu"); 
+    } else {
+      console.log("Credenciais inválidas, tente novamente.");
+      res.redirect("login");
+    }
+  });
+});
+
+
+//ENCERRAR SESSAO
+app.get('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error("Erro ao encerrar a sessão:", err);
+      return res.redirect('/menu'); 
+    }
+  });
+    res.redirect("/login");
+});
+
+//lista de usuarios (REMOVER DEPOIS ou NAO)
 app.get('/users', (req, res) => {
   const sql = 'SELECT * FROM Usuarios';
   con.query(sql, (err, results) => {
@@ -146,3 +256,4 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
