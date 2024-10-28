@@ -18,8 +18,8 @@
       <!-- Sidebar scroll-->
       <div class="scroll-sidebar" data-simplebar>
         <div class="d-flex mb-4 align-items-center justify-content-between">
-            <a href="index.html" class="text-nowrap logo-img ms-0 ms-md-1">
-              <img src="../assets/images/logos/dark-logo.svg" width="180" alt="">
+            <a href="/menu" class="text-nowrap logo-img ms-0 ms-md-1">
+              <img src="../assets/images/logos/dark-logo.jpeg" width="180" alt="">
             </a>
             <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
               <i class="ti ti-x fs-8"></i>
@@ -35,53 +35,53 @@
             <li class="sidebar-item">
               <a
                 class="sidebar-link sidebar-link primary-hover-bg"
-                href="./index.html"
+                href="/menu"
                 aria-expanded="false"
               >
                 <span class="aside-icon p-2 bg-light-primary rounded-3">
                   <i class="ti ti-layout-dashboard fs-7 text-primary"></i>
                 </span>
-                <span class="hide-menu ms-2 ps-1">Dashboard</span>
+                <span class="hide-menu ms-2 ps-1">Homepage</span>
               </a>
             </li>
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-5"></i>
-              <span class="hide-menu">UI Componenst</span>
+              <span class="hide-menu">Meu consultório</span>
             </li>
             <li class="sidebar-item">
               <a
                 class="sidebar-link sidebar-link warning-hover-bg"
-                href="./ui-buttons.html"
+                href="/solicitar-nota"
                 aria-expanded="false"
               >
                 <span class="aside-icon p-2 bg-light-warning rounded-3">
                   <i class="ti ti-article fs-7 text-warning"></i>
                 </span>
-                <span class="hide-menu ms-2 ps-1">Buttons</span>
+                <span class="hide-menu ms-2 ps-1">Solicitar nota</span>
               </a>
             </li>
             <li class="sidebar-item">
               <a
                 class="sidebar-link sidebar-link danger-hover-bg"
-                href="./ui-alerts.html"
+                href="/notas-solicitadas"
                 aria-expanded="false"
               >
                 <span class="aside-icon p-2 bg-light-danger rounded-3">
-                  <i class="ti ti-alert-circle fs-7 text-danger"></i>
+                  <i class="ti ti-notebook fs-7 text-danger"></i>
                 </span>
-                <span class="hide-menu ms-2 ps-1">Alerts</span>
+                <span class="hide-menu ms-2 ps-1">Notas solicitadas</span>
               </a>
             </li>
             <li class="sidebar-item">
               <a
                 class="sidebar-link sidebar-link success-hover-bg"
-                href="./ui-card.html"
+                href="/notas-finalizadas"
                 aria-expanded="false"
               >
                 <span class="aside-icon p-2 bg-light-success rounded-3">
-                  <i class="ti ti-cards fs-7 text-success"></i>
+                  <i class="ti ti-accessible fs-7 text-success"></i>
                 </span>
-                <span class="hide-menu ms-2 ps-1">Card</span>
+                <span class="hide-menu ms-2 ps-1">Notas finalizadas</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -106,34 +106,6 @@
                   <i class="ti ti-typography fs-7 text-indigo"></i>
                 </span>
                 <span class="hide-menu ms-2 ps-1">Typography</span>
-              </a>
-            </li>
-            <li class="nav-small-cap">
-              <i class="ti ti-dots nav-small-cap-icon fs-5"></i>
-              <span class="hide-menu">Auth</span>
-            </li>
-            <li class="sidebar-item">
-              <a
-                class="sidebar-link sidebar-link warning-hover-bg"
-                href="./authentication-login.html"
-                aria-expanded="false"
-              >
-                <span class="aside-icon p-2 bg-light-warning rounded-3">
-                  <i class="ti ti-login fs-7 text-warning"></i>
-                </span>
-                <span class="hide-menu ms-2 ps-1">Login</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a
-                class="sidebar-link sidebar-link danger-hover-bg"
-                href="./authentication-register.html"
-                aria-expanded="false"
-              >
-                <span class="aside-icon p-2 bg-light-danger rounded-3">
-                  <i class="ti ti-user-plus fs-7 text-danger"></i>
-                </span>
-                <span class="hide-menu ms-2 ps-1">Register</span>
               </a>
             </li>
             <li class="nav-small-cap">
@@ -244,7 +216,6 @@
           </ul>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-              <a href="https://adminmart.com/product/Spike-free-bootstrap-admin-dashboard/" target="_blank" class="btn btn-primary">Download Free</a>
               <li class="nav-item dropdown">
                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                   aria-expanded="false">
@@ -264,7 +235,7 @@
                       <i class="ti ti-list-check fs-6"></i>
                       <p class="mb-0 fs-3">My Task</p>
                     </a>
-                    <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block shadow-none">Logout</a>
+                    <a href="/login" class="btn btn-outline-primary mx-3 mt-2 d-block shadow-none">Logout</a>
                   </div>
                 </div>
               </li>
@@ -277,54 +248,25 @@
         <div class="container-fluid">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title fw-semibold mb-4">Forms</h5>
-              <div class="card">
-                <div class="card-body">
-                  <form>
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1">
-                    </div>
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
-                </div>
-              </div>
-              <h5 class="card-title fw-semibold mb-4">Disabled forms</h5>
-              <div class="card mb-0">
-                <div class="card-body">
-                  <form>
-                    <fieldset disabled>
-                      <legend>Disabled fieldset example</legend>
-                      <div class="mb-3">
-                        <label for="disabledTextInput" class="form-label">Disabled input</label>
-                        <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
-                      </div>
-                      <div class="mb-3">
-                        <label for="disabledSelect" class="form-label">Disabled select menu</label>
-                        <select id="disabledSelect" class="form-select">
-                          <option>Disabled select</option>
-                        </select>
-                      </div>
-                      <div class="mb-3">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
-                          <label class="form-check-label" for="disabledFieldsetCheck">
-                            Can't check this
-                          </label>
-                        </div>
-                      </div>
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                    </fieldset>
-                  </form>
+              <h5 class="card-title fw-semibold mb-4">Notas Solicitadas</h5>
+              <div class="card mb-0 menu-notas-solicitadas">
+                <div class="card-body p-4">
+                  <div class="card-body p-4">
+                    <div id="notas-solicitadas">     
+                        <% if (notas.length > 0) { %>
+                            <% notas.forEach(nota => { %>
+                                <div class="nota-solicitada-menu">
+                                    <a href="/nota/<%= nota.id_Nota %>">
+                                        <p><strong>Nome:</strong> <%= nota.nome %></p>
+                                        <p><strong>Valor:</strong> R$ <%= nota.valor %></p>
+                                    </a>
+                                </div>
+                            <% }); %>
+                        <% } else { %>
+                            <p>Não há notas solicitadas.</p>
+                        <% } %>                 
+                    </div>                  
+                  </div>
                 </div>
               </div>
             </div>

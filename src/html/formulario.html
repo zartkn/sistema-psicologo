@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spike Free</title>
+  <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
+  <link rel="stylesheet" href="../assets/css/styles.min.css" />
+</head>
+
+<body>
+  <!--  Body Wrapper -->
+
+    <!--  Sidebar End -->
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+      <!--  Header Start -->
+      
+      <!--  Header End -->
+      <div class="container-fluid">
+        <div class="container-fluid">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title fw-semibold mb-4">
+                Formulário</h5>
+              <div class="card">
+                <div class="card-body">
+                  <form id="notaFormulario" action="/formulario" method="POST">
+                    <div class="mb-3">
+                      <label for="inputIdPsicologo" class="form-label">ID Psicólogo</label>
+                      <input type="text" class="form-control" id="inputIdPsicologo" name="idPsicologo" readonly>
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputValor" class="form-label">Valor</label>
+                      <input type="text" class="form-control" id="inputValor" name="valor" readonly>
+                    </div>
+                    <div class="nome-sobrenome">
+                      <div class="mb-3">
+                        <label for="inputNome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="inputNome" name="nome">
+                      </div>
+                      <div class="mb-3">
+                        <label for="inputSobrenome" class="form-label">Sobrenome</label>
+                        <input type="text" class="form-control" id="inputSobrenome" name="sobrenome">
+                      </div>
+                    </div>                   
+                    <div class="mb-3">
+                      <label for="inputCPF" class="form-label">CPF</label>
+                      <input type="text" class="form-control" id="inputCPF" name="cpf">
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputTelefone" class="form-label">Telefone</label>
+                      <input type="text" class="form-control" id="inputTelefone" name="telefone">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../assets/js/formulario.js"></script>
+  <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/sidebarmenu.js"></script>
+  <script src="../assets/js/app.min.js"></script>
+  <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+</body>
+
+</html>

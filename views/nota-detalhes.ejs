@@ -248,13 +248,18 @@
         <div class="container-fluid">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title fw-semibold mb-4">Notas Solicitadas</h5>
               <div class="card mb-0 menu-notas-solicitadas">
                 <div class="card-body p-4">
                   <div class="card-body p-4">
-                    <h5 class="card-title mb-10 fw-semibold">Notas solicitadas</h5>
-                    <div id="notas-solicitadas">                      
-                    </div>                  
+                    <h1>Detalhes da Nota</h1>
+                    <p><strong>Nome:</strong> <%= nota.nome %></p>
+                    <p><strong>Valor:</strong> R$ <%= nota.valor %></p>
+                    <p><strong>CPF:</strong> <%= nota.cpf %></p>
+                    <p><strong>Telefone:</strong> <%= nota.telefone %></p>
+                    <p><strong>Finalizado:</strong> <%= nota.finalizado ? 'Sim' : 'Não' %></p> 
+                    <form action="/nota/<%= nota.id_Nota %>/finalizar" method="POST">
+                        <button type="submit" class="btn btn-primary" <%= nota.finalizado ? 'disabled' : '' %>>Finalizar Nota</button>
+                    </form>
                   </div>
                 </div>
               </div>
