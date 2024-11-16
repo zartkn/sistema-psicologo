@@ -4,9 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Spike Free</title>
+  <title>Psicontábil</title>
   <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
   <link rel="stylesheet" href="../assets/css/styles.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 </head>
 
 <body>
@@ -83,8 +84,11 @@
                 </span>
                 <span class="hide-menu ms-2 ps-1">Notas finalizadas</span>
               </a>
-            </li>
-            
+            </li> 
+          </ul>
+          
+
+          
         </nav>
         <!-- End Sidebar navigation -->
       </div>
@@ -122,10 +126,6 @@
                       <i class="ti ti-user fs-6"></i>
                       <p class="mb-0 fs-3">My Profile</p>
                     </a>
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-mail fs-6"></i>
-                      <p class="mb-0 fs-3">My Account</p>
-                    </a>
                     <a href="/logout" class="btn btn-outline-primary mx-3 mt-2 d-block shadow-none">Logout</a>
                   </div>
                 </div>
@@ -136,33 +136,100 @@
       </header>
       <!--  Header End -->
       <div class="container-fluid">
-        <div class="container-fluid">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title fw-semibold mb-4">Notas Solicitadas</h5>
-              <div class="card mb-0 menu-notas-solicitadas">
-                <div class="card-body p-4">
-                  <div class="card-body p-4">
-                    <div id="notas-solicitadas">     
-                        <% if (notas.length > 0) { %>
-                            <% notas.forEach(nota => { %>
-                                <div class="nota-solicitada-menu">
-                                    <a href="/nota/<%= nota.id_Nota %>">
-                                        <p><strong>Nome:</strong> <%= nota.nome %></p>
-                                        <p><strong>Valor:</strong> R$ <%= nota.valor %></p>
-                                    </a>
-                                </div>
-                            <% }); %>
-                        <% } else { %>
-                            <p>Não há notas solicitadas.</p>
-                        <% } %>                 
-                    </div>                  
+        <!--  Row 1 -->
+        <div class="row">
+          <div class="col-lg-8 d-flex align-items-strech">
+            <div class="card w-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between ">
+                  <div class="">
+                    <h5 class="card-title fw-semibold">Próximas consultas</h5>
                   </div>
+                  <div class="dropdown">
+                    <button
+                      id="dropdownMenuButton1"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      class="rounded-circle btn-transparent rounded-circle btn-sm px-1 btn shadow-none"
+                    >
+                      <i class="ti ti-dots-vertical fs-7 d-block"></i>
+                    </button>
+                    <ul
+                      class="dropdown-menu dropdown-menu-end"
+                      aria-labelledby="dropdownMenuButton1"
+                    >
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li>
+                        <a class="dropdown-item" href="#">Another action</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#"
+                          >Something else here</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <iframe src="html/calendar/fullcalendar.html" style="max-width: 800px; width: 100%; height: 600px; frameborder=0"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="row">
+              <div class="col-lg-12 col-sm-6">
+                <!-- Yearly Breakup -->
+                <div class="card overflow-hidden">
+                  <div class="card-body p-4 notas-solitadas-menu">
+                    <h5 class="card-title mb-10 fw-semibold">Notas solicitadas</h5>
+                    <div id="notas-solicitadas">     
+                      <% if (notasSolicitadas.length > 0) { %>
+                        <% notasSolicitadas.forEach(nota => { %>
+                          <div class="nota-solicitada-menu">
+                            <a href="/nota/<%= nota.id_Nota %>">
+                              <p><strong>Nome:</strong> <%= nota.nome %></p>
+                              <p><strong>Valor:</strong> R$ <%= nota.valor %></p>
+                            </a>
+                          </div>
+                        <% }); %>
+                      <% } else { %>
+                        <p>Não há notas solicitadas.</p>
+                      <% } %>                 
+                    </div>
+                    
+                    
+                                      
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-sm-6">
+                <!-- Monthly Earnings -->
+                <div class="card">
+                  <div class="card-body notas-solitadas-menu">
+                    <h5 class="card-title mb-10 fw-semibold">Notas completadas</h5>
+                    <div id="notas-completadas">     
+                      <% if (notasFinalizadas.length > 0) { %>
+                        <% notasFinalizadas.forEach(nota => { %>
+                          <div class="nota-solicitada-menu nota-cor-verde">
+                            <a href="/nota/<%= nota.id_Nota %>">
+                              <p><strong>Nome:</strong> <%= nota.nome %></p>
+                              <p><strong>Valor:</strong> R$ <%= nota.valor %></p>
+                            </a>
+                          </div>
+                        <% }); %>
+                      <% } else { %>
+                        <p>Não há notas finalizadas.</p>
+                      <% } %>                 
+                    </div>
+                    
+                                
                 </div>
               </div>
             </div>
           </div>
         </div>
+        
       </div>
     </div>
   </div>
@@ -170,7 +237,10 @@
   <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/js/sidebarmenu.js"></script>
   <script src="../assets/js/app.min.js"></script>
+  <script src="../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
   <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  
 </body>
 
 </html>

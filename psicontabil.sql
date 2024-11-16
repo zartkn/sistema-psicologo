@@ -1,3 +1,5 @@
+
+
 CREATE DATABASE IF NOT EXISTS psicontabil;
 
 use psicontabil;
@@ -18,6 +20,7 @@ CREATE TABLE IF NOT EXISTS Notas (
     telefone VARCHAR (11) NOT NULL,
     finalizado BOOLEAN DEFAULT FALSE
 );
+
 
 select * from Notas;
 select * from Usuarios;
