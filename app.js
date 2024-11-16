@@ -149,6 +149,36 @@ app.post('/formulario', (req, res) => {
 });
 
 
+
+app.get('/index', (req, res) => {
+  if (!req.session.user || !req.session.user.id) {
+    return res.redirect('/login'); 
+  }
+
+  const psicologoId = req.session.user.id; 
+
+  //consulta as notas solicitadas e finalizadas
+  const querySolicitadas = 'SELECT * FROM Notas WHERE id_Psicologo = ? AND finalizado = 0;';
+  const queryFinalizadas = 'SELECT * FROM Notas WHERE id_Psicologo = ? AND finalizado = 1;';
+
+  con.query(querySolicitadas, [psicologoId], (err, notasSolicitadas) => {
+    if (err) {
+      console.error('Erro ao buscar notas solicitadas:', err);
+      return res.status(500).send('Erro ao buscar notas solicitadas');
+    }
+
+    con.query(queryFinalizadas, [psicologoId], (err, notasFinalizadas) => {
+      if (err) {
+        console.error('Erro ao buscar notas finalizadas:', err);
+        return res.status(500).send('Erro ao buscar notas finalizadas');
+      }
+
+      res.render('index', { notasSolicitadas, notasFinalizadas });
+    });
+  });
+});
+
+
 //SOLICITAR NOTA
 app.get("/solicitar-nota", (req, res) => {
 
@@ -185,7 +215,7 @@ app.get('/menu', (req, res) => {
   if (!req.session.user || !req.session.user.id) {
     return res.redirect('/login'); 
   }
-  res.sendFile(__dirname + '/src/html/index.html');
+  return res.redirect('/index'); 
 });
 
 
@@ -213,6 +243,7 @@ app.post('/register', (req, res) => {
     res.redirect("/login");  
   });
 });
+
 
 
 //TELA DE LOGIN GET
