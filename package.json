@@ -6,6 +6,10 @@
   "stackblitz": {
     "startCommand": "npm start"
   },
+  "scripts": {
+    "start": "node app.js",
+     "dev": "nodemon app.js"
+  },
   "devDependencies": {
     "sass": "^1.54.8"
   },
