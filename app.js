@@ -116,7 +116,7 @@ app.get('/notas-finalizadas', (req, res) => {
   const psicologoId = req.session.user.id; 
 
   // consulta as notas no banco de dados com base no psicologo
-  con.query('SELECT * FROM Notas WHERE id_Psicologo = 1 AND finalizado = 1; ', [psicologoId], (err, notas) => {
+  con.query('SELECT * FROM Notas WHERE id_Psicologo = ? AND finalizado = 1; ', [psicologoId], (err, notas) => {
     if (err) {
       console.error('Erro ao buscar notas:', err);
       return res.status(500).send('Erro ao buscar notas');
@@ -170,7 +170,7 @@ app.get('/notas-solicitadas', (req, res) => {
   const psicologoId = req.session.user.id; 
 
   // consulta as notas no banco de dados com base no psicologo
-  con.query('SELECT * FROM Notas WHERE id_Psicologo = 1 AND finalizado = 0; ', [psicologoId], (err, notas) => {
+  con.query('SELECT * FROM Notas WHERE id_Psicologo = ? AND finalizado = 0; ', [psicologoId], (err, notas) => {
     if (err) {
       console.error('Erro ao buscar notas:', err);
       return res.status(500).send('Erro ao buscar notas');
